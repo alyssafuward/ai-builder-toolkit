@@ -30,6 +30,10 @@ Reads a `.jsonl` session file and prints the conversation to stdout using ANSI e
   - Block types: `text`, `tool_use`, `tool_result`, `thinking`
 - `sessionId`, `version`: session metadata, may only appear on some entries
 
+### `tools/cover-zoom/cover_zoom.py`
+
+Makes the personal-essay cover zoom GIF. Uses Pillow + ffmpeg (genuinely necessary — frame resampling and GIF palette encoding). Keyframe boxes are passed in; timing is locked in `TIMING` (holds: full 0.3s, desk 0.5s, panel 0.7s). Companion skill in `skills/cover-zoom/`.
+
 ## Conventions
 
 - Keep tools as single self-contained scripts where possible
