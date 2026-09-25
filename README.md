@@ -18,6 +18,18 @@ Add a `versions.json` to any git repo listing the commits you want to show, then
 node ~/src/ai-builder-toolkit/tools/version-switcher.js
 ```
 
+### `tools/cover-zoom/`
+
+Turns a "Step up Step together" personal-essay cover into a looping zoom GIF: full cover → desk orange → essay panel → back out. Rhythm is drag, pause, drag, pause, drag.
+
+**Requirements:** Python 3, Pillow, ffmpeg.
+
+```bash
+python3 tools/cover-zoom/cover_zoom.py cover.png out.gif --desk X,Y,W,H --panel X,Y,W,H
+```
+
+Boxes are in the image's own pixels and must be 16:10. Timing lives in `TIMING` at the top of the script.
+
 ### `tools/render-chat.py`
 
 > **Note:** This script is out of date and may not work correctly with recent versions of Claude Code.
@@ -48,6 +60,12 @@ Looks at the current conversation and suggests a short, specific chat title (und
 **Install:** [Download `skill.md`](https://github.com/alyssafuward/ai-builder-toolkit/blob/main/skills/rename-sug/skill.md) from this repo, then drag it into a Claude Code conversation and say, "Install this skill."
 
 **Usage:** type `/rename-sug` in any Claude Code session.
+
+### `cover-zoom`
+
+Companion to `tools/cover-zoom/`. Hand Claude a cover image and it picks the desk and panel boxes, runs the script, and opens the GIF.
+
+**Usage:** say "cover zoom" and attach the cover.
 
 ---
 
